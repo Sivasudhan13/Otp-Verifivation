@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Otp verification</title>
+  </head>
+  <body>
+    <div>
+      <h1>OTP Verification</h1>
+      <button onclick="GenerateOtp()">Generate Otp</button>
+      <p id="toDisplayOtp"></p>
+      <input type="text" placeholder="Enter Otp" id="UserEnterOtp" />
+      <button onclick="VerifyOtp()">Verify Otp</button>
+      <p id="resultDisplay"></p>
+    </div>
+    <script>
+      console.log("just try");
+      let GeneratedOtp = "";
+      function GenerateOtp() {
+        GeneratedOtp = Math.trunc(Math.random() * 1000000);
+        console.log(GenerateOtp);
+        document.getElementById("toDisplayOtp").innerText =
+          "OTP :" + GeneratedOtp;
+      }
+      console.log("gen===>", GeneratedOtp);
+      function VerifyOtp() {
+        let UserEnterOtp = document.getElementById("UserEnterOtp").value;
+        console.log(UserEnterOtp);
+        if (Number(UserEnterOtp) === GeneratedOtp) {
+          document.getElementById("resultDisplay").innerText =
+            "✅ OTP Verified! ";
+          document.getElementById("resultDisplay").style.color = "green";
+        } else {
+          document.getElementById("resultDisplay").innerText =
+            "❌ Incorrect OTP. ";
+          document.getElementById("resultDisplay").style.color = "red";
+        }
+      }
+    </script>
+  </body>
+</html>
