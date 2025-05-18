@@ -29,12 +29,13 @@
         console.log(UserEnterOtp);
         if (Number(UserEnterOtp) === GeneratedOtp) {
           document.getElementById("resultDisplay").innerText =
-            "✅ OTP Verified! ";
+            " OTP Verified! ";
           document.getElementById("resultDisplay").style.color = "green";
         } else {
           document.getElementById("resultDisplay").innerText =
-            "❌ Incorrect OTP. ";
+            " Incorrect OTP. ";
           document.getElementById("resultDisplay").style.color = "red";
+          console.log("---");
         }
       }
     </script>
